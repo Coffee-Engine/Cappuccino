@@ -27,11 +27,39 @@
     },
     for: (code,index) => {
       let text = `for (let `;
-      const variableName = cappuccino.codeRunner(code, index, false, "=", "", true);
-      const initialValue = cappuccino.codeRunner(code, cappuccino.codeRunnerPosition, false, ",", true);
-      const length = cappuccino.codeRunner(code, cappuccino.codeRunnerPosition, false, ",", true);
-      text += `${variableName[1]} = ${initialValue[1]}; ${length} `;
-      return `${variableName[1]}++) {\nconst item = defaultArray[${variableName[1]}];\n}`
+      const variableName = cappuccino.codeRunner(code, index, false, "=");
+      const initialValue = cappuccino.codeRunner(code, cappuccino.codeRunnerPosition, "do", false);
+      
+      //Remove trailing = if needed
+      if (initialValue[0].charAt(0) == '=') initialValue[0] = initialValue[0].replace('=', '');
+      const split = initialValue[0].split(",");
+
+      switch (split.length) {
+        case 1:
+          console.error(`Error while parsing Cappuchino code, For loop incomplete at character ${index}.`);
+          break;
+
+        case 2:
+          text += `${variableName[1]} = ${split[0]}; ${variableName[1]} > ${split[1]}; ${variableName[1]}++`;
+          break;
+
+        case 3:
+          text += `${variableName[1]} = ${split[0]}; ${variableName[1]} > ${split[1]}; ${variableName[1]}+=${split[2]}`;
+          break;
+      
+        default:
+          console.error(`Error while parsing Cappuchino code, For loop invalid at character ${index}.`);
+          break;
+      }
+
+      const inner = cappuccino.codeRunner(
+        code,
+        cappuccino.codeRunnerPosition,
+        'end'
+      );
+
+      text += `) {${inner[0]}}`;
+      return text;
     },
 
     //Functions
