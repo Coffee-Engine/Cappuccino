@@ -13,7 +13,7 @@
         "\n"
       );
 
-      return `while (!${conditional[0].replaceAll('\n', '')}) {${inner[0]}}\n`;
+      return `while (!(${conditional[0].replaceAll('\n', '')})) {${inner[0]}}\n`;
     },
     while: (code, index) => {
       const conditional = cappuccino.codeRunner(code, index, 'do');
@@ -221,6 +221,7 @@
   };
 
   cappuccino.compile = code => {
-    return cappuccino.codeRunner(code, 0, ' ')[0];
+    //Add an extra line for easy EOF detection
+    return cappuccino.codeRunner(code + "\n", 0, ' ')[0];
   };
 })();
