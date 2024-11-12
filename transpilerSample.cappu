@@ -1,0 +1,44 @@
+let i=0
+repeat
+    print("hello cappuccino")
+    i+=1
+until i==10 and i > 3
+
+let j = 10
+
+while j > 0 do
+    j -= 1;
+    print(j)
+end
+
+if i==0 then
+    print("wow")
+end
+
+if (not i == 3) and (i == 5) then
+    print("impossible")
+end
+
+function hello()
+    print("hello!")
+end
+
+if i==1 then
+    print("one")
+elseif i==2 then
+    print("two")
+else
+    print("three")
+end
+
+class wow from parent constructed(x,y,z)
+    print("I am constructed")
+contains
+    function hello()
+        print("hi")
+    end
+
+    world = {
+        Hello:"Json"
+    }
+end
