@@ -95,7 +95,7 @@
         //remove the last contains with a really wierd method.
         if (text.endsWith("contains")) text = text.substring(0, text.length - 8);
 
-        text += `${(parentClass.length > 0) ? "{\n constructor() \n{\nsuper()\n}\n" : "constructor() {}\n"}`;
+        text += `${(parentClass.length > 0) ? "{\n constructor() \n{\nsuper()\n}\n" : "{\n constructor() {}\n"}`;
       }
 
       const inner = cappuccino.codeRunner(
