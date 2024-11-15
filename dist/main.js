@@ -80,7 +80,7 @@
       let parentClass = [];
       if (name[1] == "from") {
         parentClass = cappuccino.codeRunner(code, cappuccino.codeRunnerPosition, ["constructed", "contains"], "\n");
-        text += ` extends ${parentClass[0]} {\n`;
+        text += ` extends ${parentClass[0]}`;
       }
 
       //If we skip straight to containment we contain our object
@@ -89,7 +89,7 @@
         //Skip the )
         cappuccino.codeRunnerPosition += 1;
         const constructor = cappuccino.codeRunner(code, cappuccino.codeRunnerPosition, ["contains"], false);
-        text += `constructor ${constructorArgs[0].length > 1 ? constructorArgs[0] : "()"} {${constructor[0]}\n}\n`;
+        text += `{\n constructor ${constructorArgs[0].length > 1 ? constructorArgs[0] : "()"} {${constructor[0]}\n}\n`;
       }
       else {
         //remove the last contains with a really wierd method.
