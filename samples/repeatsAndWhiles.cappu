@@ -1,0 +1,20 @@
+//Cappuccino
+//
+//Examples of while Loops and repeat untils
+
+let i = 0;
+
+//While Loops are structured much like any other programming language
+while i <= 10 do
+    print(i)
+    i++
+end
+
+//But repeat untils have their lua syntax in tact
+//We start with a repeat and the statement we want to repeat
+repeat
+    //We do our stuff here
+    print(i)
+
+//Then we declare our until here.
+until i > 20
