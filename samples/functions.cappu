@@ -8,3 +8,11 @@ function hello(number)
 end
 
 hello(5)
+
+//They can also be declared like JS functions.
+
+const jsHello = () => {
+    print("hi")
+}
+
+jsHello();
