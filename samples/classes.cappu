@@ -23,18 +23,10 @@ class moreGreetings from greeting contains
     hallo="german"
 end
 
-//If we want a specific constructor we just put it before the contains
-class evenMoreGreetings from moreGreetings constructed
-    super();
-    print("greetings")
-contains
-    function Aloha()
-        print("Aloha");
-    end
-end
 
-//If you want a constructor to have parameters you can put () for your paremeters to go into
-class goodbyes constructed(bye)
+//If you want a specific constructor use
+class goodbyes from moreGreetings constructed(bye)
+    super(bye)
     print(bye)
     this.bye = bye
 contains
