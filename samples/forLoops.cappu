@@ -1,0 +1,32 @@
+//Cappuccino
+//
+//Example for loop iterator
+
+//Create our array of orders
+const orders = [
+    {
+        Item:"Chair",
+        Price: 53.04,
+        Tag: 43
+    },
+    {
+        Item:"Sofa",
+        Price: 203.43,
+        Tag: 1
+    },
+    {
+        Item:"Battery",
+        Price: 1,
+        Tag: 238
+    }
+]
+
+//Loop through our array and list the orders
+for i=0,orders.length do
+    print("Item " + i)
+    print(orders[i].Item or "unknown")
+    print(orders[i].Price or 0)
+    print(orders[i].Tag or 0)
+end
+
+print("All Orders listed")
