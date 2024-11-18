@@ -1,0 +1,44 @@
+//Cappuccino
+//
+//Classes
+
+//Classes are a fundemental principal of OOP
+//So lets use classes in Cappuccino
+//we can make a class by typing this in
+class greeting contains
+    function hi()
+        print("hi")
+    end
+end
+
+//Instantiating a class is done like this
+let greetings = new greeting()
+
+//Deriving classes can be done like this
+class moreGreetings from greeting contains
+    function howdy()
+        print("howdy")
+    end
+
+    hallo="german"
+end
+
+//If we want a specific constructor we just put it before the contains
+class evenMoreGreetings from moreGreetings constructed
+    super();
+    print("greetings")
+contains
+    function Aloha()
+        print("Aloha");
+    end
+end
+
+//If you want a constructor to have parameters you can put () for your paremeters to go into
+class goodbyes constructed(bye)
+    print(bye)
+    this.bye = bye
+contains
+    function adios()
+        print(this.bye)
+    end
+end
