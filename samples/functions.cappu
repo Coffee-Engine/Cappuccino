@@ -1,0 +1,10 @@
+//Cappuccino
+//
+//functions
+
+//Functions are functions they are simple, just like they should be
+function hello(number)
+    print("hi " + number);
+end
+
+hello(5)
