@@ -1,0 +1,18 @@
+//Cappuccino
+//
+//ifs and elses
+
+let i = 0
+let j = 10
+
+//There are 3 logical opcodes in cappuccino "if" "else" "elseif"
+//everything except an if has to be chained after an if
+
+//Conjoiners such as or not, and and can be used in logical statements
+if i == 3 and j == 10 then
+    print("statement 1")
+elseif i == 0 and j == 10 then
+    print("statement 2")
+else
+    print("statement 3")
+end
